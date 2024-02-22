@@ -20,10 +20,10 @@
 Download\
 <img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled.png" width="456px" align="center">
 
-Next, next..\
+Install, next, next..\
 <img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled1.png" width="456px" align="center">
 
-Complete!\
+Finish\
 <img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled2.png" width="456px" align="center">\
 Check version: node -v\
 Run file .js: node **.js\
