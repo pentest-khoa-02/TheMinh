@@ -18,13 +18,13 @@
 
 ### Setting Node.js
 Download\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled.png" width="456px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled.png" width="456px" align="center">
 
 Install, next, next..\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled1.png" width="456px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled1.png" width="456px" align="center">
 
 Finish\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled2.png" width="456px" align="center">\
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled2.png" width="456px" align="center">\
 Check version: node -v\
 Run file .js: node **.js\
 Install package: npm install **\
@@ -32,10 +32,10 @@ Install package: npm install **\
 
 ### Set up and test a Node.js and Express development environment
 Create a file hello.js to create server\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled5.png" width="456px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled5.png" width="456px" align="center">
 
 Start the server by run file hello.js\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled3.png" width="456px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled3.png" width="456px" align="center">
 
 Navigate to the URL http://127.0.0.1:3000 ..Complete!\
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/Untitled4.png" width="456px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/settingnodejs/image/Untitled4.png" width="456px" align="center">
