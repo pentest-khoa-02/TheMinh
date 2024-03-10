@@ -37,6 +37,19 @@
 
 * For example, you might want to configure Git to deploy the most recent commit from the develop branch to a test server whenever anyone merges a pull request into it. Combining this kind of build automation with peer review means you have the highest possible confidence in your code as it moves from development to staging to production.
 
+# The three states of Git
+## The three main states of a Git project: the working tree, the staging area, and the Git directory.
+
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/1.jpg" width="666px" align="center">
+
+* The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
+* The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. Its technical name in Git parlance is the “index”, but the phrase “staging area” works just as well.
+* The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.
+* The basic Git workflow goes something like this:
+    - You modify files in your working tree.
+    - You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area.
+    - You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.
+
 # Install Git
 ## For Windows
 * Download and install the lastest at: https://gitforwindows.org/
@@ -447,6 +460,12 @@ git pull --verbose
 
 * Gives verbose output during a pull which displays the content being downloaded and the merge details.
 
+```sh
+git pull <remote> <branch> --allow-unrelated-histories
+```
+
+* Allow merging branches with no common history base, which then should finish the merge without errors. 
+
 ## Git revert
 * The git revert command can be considered an 'undo' type command, however, it is not a traditional undo operation. Instead of removing the commit from the project history, it figures out how to invert the changes introduced by the commit and appends a new commit with the resulting inverse content. This prevents Git from losing history, which is important for the integrity of your revision history and for reliable collaboration.
 Reverting should be used when you want to apply the inverse of a commit from your project history. This can be useful, for example, if you’re tracking down a bug and find that it was introduced by a single commit. Instead of manually going in, fixing it, and committing a new snapshot, you can use git revert to automatically do all of this for you.
@@ -464,6 +483,9 @@ $＞ git revert e5d6e85a840d8c49654d1e9e3386f1c3dd719d91
 
 ## Git rebase
 ### What is git rebase?
+
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/3.jpg" width="666px" align="center">
+
 * Rebasing is the process of moving or combining a sequence of commits to a new base commit. Rebasing is most useful and easily visualized in the context of a feature branching workflow. The general process can be visualized as the following:
 
 * From a content perspective, rebasing is changing the base of your branch from one commit to another making it appear as if you'd created your branch from a different commit. Internally, Git accomplishes this by creating new commits and applying them to the specified base. It's very important to understand that even though the branch looks the same, it's composed of entirely new commits.
@@ -492,6 +514,8 @@ This automatically rebases the current branch onto ＜base＞, which can be any 
 
 ## Git merge
 
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/2.jpg" width="666px" align="center">
+
 * Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
 
 * Note that all of the commands presented below merge into the current branch. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected.
@@ -518,3 +542,85 @@ git branch -d new-feature
 
 ### When to use git cherry pick
 * Git cherry-pick is a useful tool but not always a best practice. Cherry picking can cause duplicate commits and many scenarios where cherry picking would work, traditional merges are preferred instead. With that said git cherry-pick is a handy tool for a few scenarios...
+
+### Example
+
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/4.jpg" width="666px" align="center">
+
+```sh
+$ git checkout rel_2.3 # First we checkout to branch rel_2.3
+$ git cherry-pick dev~2
+# or
+$ git cherry-pick F # F here is the commit hash
+```
+
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/5.jpg" width="666px" align="center">
+
+## Git tag
+* Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1).
+* A tag is like a branch that doesn’t change. Unlike branches, tags, after being created, have no further history of commits. For more info on branches visit the git branch page.
+
+### Example
+
+```sh
+git tag <tagname>
+// Createing a tag
+git tag
+// Listing tags
+```
+
+* Annotated tags:
+
+```sh
+git tag -a v1.4
+
+git tag -a v1.4 -m "my version 1.4"
+```
+
+* Lightweight tags:
+
+```sh
+git tag v1.4-lw
+```
+
+## .gitignore file
+* Git sees every file in your working copy as one of three things:
+    - tracked - a file which has been previously staged or committed;
+    - untracked - a file which has not been staged or committed; or
+    - ignored - a file which Git has been explicitly told to ignore.
+
+* Ignored files are usually build artifacts and machine generated files that can be derived from your repository source or should otherwise not be committed.
+
+### Example
+
+```sh
+touch .gitignore
+```
+
+* If the command succeeds, there will be no output.
+* For an example .gitignore file, see "Some common .gitignore configurations" in the Octocat repository.
+* If you want to ignore a file that is already checked in, you must untrack the file before you add a rule to ignore it. From your terminal, untrack the file.
+
+```sh
+git rm --cached FILENAME
+```
+
+## .git folder
+* Folder .git is initialized by git init.
+* .git contains all information required for version control. If you want to clone your repository, copying .git is enough.
+* Four sub-directories:
+    - hooks/ : example scripts
+    - info/ : exclude file for ignored patterns
+    - objects/ : all "objects"
+    - refs/ : pointers to commit objects
+
+* Four files:
+    - HEAD : the current branch
+    - config : configuration options
+    - description
+    - index : staging area
+
+* Here "object" includes:
+    - blobs (files)
+    - trees (directories)
+    - commits (reference to a tree, parent commit, etc.)
