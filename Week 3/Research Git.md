@@ -40,7 +40,7 @@
 # The three states of Git
 ## The three main states of a Git project: the working tree, the staging area, and the Git directory.
 
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/1.jpg" width="666px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/main/Week%203/images/1.jpg" width="666px" align="center">
 
 * The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.
 * The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. Its technical name in Git parlance is the “index”, but the phrase “staging area” works just as well.
@@ -484,7 +484,7 @@ $＞ git revert e5d6e85a840d8c49654d1e9e3386f1c3dd719d91
 ## Git rebase
 ### What is git rebase?
 
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/3.jpg" width="666px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/main/Week%203/images/3.jpg" width="666px" align="center">
 
 * Rebasing is the process of moving or combining a sequence of commits to a new base commit. Rebasing is most useful and easily visualized in the context of a feature branching workflow. The general process can be visualized as the following:
 
@@ -514,7 +514,7 @@ This automatically rebases the current branch onto ＜base＞, which can be any 
 
 ## Git merge
 
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/2.jpg" width="666px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/main/Week%203/images/2.jpg" width="666px" align="center">
 
 * Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
 
@@ -545,7 +545,7 @@ git branch -d new-feature
 
 ### Example
 
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/4.jpg" width="666px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/main/Week%203/images/4.jpg" width="666px" align="center">
 
 ```sh
 $ git checkout rel_2.3 # First we checkout to branch rel_2.3
@@ -554,7 +554,7 @@ $ git cherry-pick dev~2
 $ git cherry-pick F # F here is the commit hash
 ```
 
-<img src="https://github.com/pentest-khoa-02/TheMinh/blob/master/Week%203/images/5.jpg" width="666px" align="center">
+<img src="https://github.com/pentest-khoa-02/TheMinh/blob/main/Week%203/images/5.jpg" width="666px" align="center">
 
 ## Git tag
 * Tags are ref's that point to specific points in Git history. Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1).
