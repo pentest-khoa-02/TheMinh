@@ -1,0 +1,148 @@
+https://dbdiagram.io/d/65e422bbcd45b569fb61e711
+Table users {
+  id integer [primary key]
+  username varchar(50)
+}
+
+Table hero {
+  id integer
+  name varchar(50)
+  description1 text
+  description2 text
+}
+
+Table aboutme {
+  id integer
+  name varchar(50)
+  age integer
+  website varchar(50)
+  degree varchar(50)
+  phone varchar(50)
+  phemailone varchar(50)
+  city varchar(50)
+  freelance varchar(50)
+}
+
+Table skill {
+  id integer
+  name varchar(50)
+  count_skill integer
+  description text
+}
+
+Table code {
+  id integer
+  name varchar(50)
+  count_code integer
+}
+
+Table sumary {
+  id integer
+  name varchar(50)
+  year varchar(50)
+  description text
+  details text
+}
+
+Table education {
+  id integer
+  name varchar(50)
+  year varchar(50)
+  description text
+  details text
+}
+
+Table experience {
+  id integer
+  name varchar(50)
+  year varchar(50)
+  description text
+  details text
+}
+
+Table myservices {
+  id integer
+  name varchar(50)
+  description text
+}
+
+Table testimonials {
+  id integer
+  name varchar(50)
+  profile_image varchar(50)
+  job varchar(50)
+  description text
+}
+
+Table myportfolio {
+  id integer
+  portfolio_id integer [primary key]
+  name varchar(50)
+  portfolio_link_img varchar(50)
+  portfolio_link varchar(50) [primary key]
+  portfolio_type varchar(50)
+}
+
+Table portfolioimg {
+  id integer
+  portfolio_id integer
+  name varchar(50)
+  portfolio_link_img varchar(50) [primary key]
+}
+
+Table portfoliodetails {
+  id integer
+  portfolio_id integer
+  name varchar(50)
+  category varchar(50)
+  client varchar(50)
+  portfolio_date timestamp
+  portfolio_link varchar(50)
+  description text
+}
+
+Table pricing {
+  id integer
+  name varchar(50)
+  price float
+  description text
+  pay_link varchar(50)
+}
+
+Table sosial {
+  id integer
+  sosial_name varchar(50)
+  sosial_link varchar(50)
+}
+
+Table contact {
+  id integer
+  name varchar(50)
+  email varchar(50)
+  subject varchar(50)
+  message text
+}
+
+Ref: users.id < aboutme.id
+Ref: users.id < hero.id
+Ref: hero.name < aboutme.name
+Ref: users.id < skill.id
+Ref: users.id < code.id
+Ref: users.id < sumary.id
+Ref: users.id < education.id
+Ref: users.id < experience.id
+Ref: users.id < myservices.id
+Ref: users.id < testimonials.id
+Ref: users.id < myportfolio.id
+Ref: myportfolio.portfolio_id < portfolioimg.portfolio_id
+Ref: myportfolio.portfolio_id < portfoliodetails.portfolio_id
+Ref: users.id < portfolioimg.id
+Ref: portfolioimg.portfolio_link_img < myportfolio.portfolio_link_img
+Ref: users.id < portfoliodetails.id
+Ref: myportfolio.name < portfolioimg.name
+Ref: myportfolio.id < portfoliodetails.id
+Ref: myportfolio.name < portfoliodetails.name
+Ref: portfoliodetails.portfolio_link < myportfolio.portfolio_link
+Ref: users.id < pricing.id
+Ref: users.id < sosial.id
+Ref: users.id < contact.id
